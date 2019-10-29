@@ -164,12 +164,9 @@ class CrawlManager(object):
         return dfd
 
     def _get_log_file_path(self):
-        # log_dir = os.path.join(self.log_dir, self.spider_name)
         log_dir = self.log_dir
         if not os.path.exists(log_dir):
             os.makedirs(log_dir)
-        # time_format = settings.SPIDER_LOG_FILE_TIMEFORMAT
-        # filename = datetime.datetime.now().strftime(time_format) + '.log'
         filename = self.spider_name + '.log'
         return os.path.join(log_dir, filename)
 
